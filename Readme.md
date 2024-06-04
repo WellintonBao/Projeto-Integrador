@@ -1,12 +1,25 @@
-Integrantes do Projeto: Wellington Bao, Bruno Neckel e Paulo Henrique Moura.
+#### Integrantes do Projeto: 
 
-Matérias e Professores: Eng.Software (Raquel Aparecida), Banco de Dados1 (Denio Duarte) e Programação2 (Giancarlo Dondoni).
+Wellington Bao (wellinton.bao@estudante.uffs.edu.br) (2221101045);
 
-Descrição do Projeto: O objetivo do projeto é criar uma plataforma para ajudar os jogadores do jogo de tabuleiro D&D. 
+Bruno Neckel (bruno.neckel@estudante.uffs.edu.br) (2221101035);
+
+Paulo Henrique Moura (paulo.braga@estudante.uffs.edu.br) (2221101020).
+
+#### Matérias e Professores: 
+Eng.Software (Raquel Aparecida);
+
+Banco de Dados 1 (Denio Duarte);  
+
+Programação 2 (Giancarlo Dondoni).
+
+#### Descrição do Projeto: 
+
+O objetivo do projeto é criar uma plataforma para ajudar os jogadores do jogo de tabuleiro D&D. 
 A ideia surgiu como uma forma de ajudar com problemas recorrentes ao se jogar rpg, sendo alguns destes, organização de personagens,
 se atualizar das atualizações do jogo oficial e categorizar os monstros e npcs selecionados para as sessões. 
 
-Funcionalidades Principais:
+#### Funcionalidades Principais:
 
   Uma biblioteca para a organização de seus cards;
   
