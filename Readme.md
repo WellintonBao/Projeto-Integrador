@@ -1,6 +1,6 @@
 #### Integrantes do Projeto: 
 
-Wellington Bao (wellinton.bao@estudante.uffs.edu.br) (2221101045);
+Wellinton Bao (wellinton.bao@estudante.uffs.edu.br) (2221101045);
 
 Bruno Neckel (bruno.neckel@estudante.uffs.edu.br) (2221101035);
 
@@ -15,8 +15,8 @@ Programação 2 (Giancarlo Dondoni).
 
 #### Descrição do Projeto: 
 
-O objetivo do projeto é criar uma plataforma para ajudar os jogadores do jogo de tabuleiro D&D. 
-A ideia surgiu como uma forma de ajudar com problemas recorrentes ao se jogar rpg, sendo alguns destes, organização de personagens,
+O objetivo do projeto é criar uma plataforma para facilitar a experiência dos jogadores do jogo de tabuleiro Dungeons And Dragons. 
+A ideia surgiu como uma forma de ajudar com problemas recorrentes ao se jogar rpg, sendo alguns destes, organização de informações,
 se atualizar das atualizações do jogo oficial e categorizar os monstros e npcs selecionados para as sessões. 
 
 #### Funcionalidades Principais:
@@ -27,8 +27,6 @@ se atualizar das atualizações do jogo oficial e categorizar os monstros e npcs
   
   Uma aba de notícias do jogo e novidades relacionadas ao rpg;
 
-  Criação de cards próprios para o usuário; 
-  
-  Plano pago com benefícios únicos;
+  Criação de cards próprios para o usuário;
   
   Comunidade para os jogadores compartilharem seus jogos e ideias.
