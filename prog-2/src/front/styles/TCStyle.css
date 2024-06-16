@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+header{
+    background-color: black;
+    color: rgb(105, 1, 1);
+    font-family: 'MedievalSharp', serif;
+}
+main{
+    height: 100%;
+    position:static;
+    display: flex;
+    background-color: #1f1f1f;
+}
+
+.icones{
+    width:  40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 3px;
+}
+.icones:hover {
+    outline: 4px solid lightblue; 
+}
+
+/* max = se diminuir de  |   min = se passar de */
+/*CELULAR*/
+@media screen and (max-width: 430px) {
+    .icones {
+        width:  30px;
+        height: 30px;
+    }
+}
