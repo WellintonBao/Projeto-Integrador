@@ -11,7 +11,6 @@ const Icones = () => {
                     src="https://cdn-icons-png.flaticon.com/512/1183/1183773.png"
                 />
             </a>
-            {/* <BotaoDark/> */}
         </div>
     );
 };

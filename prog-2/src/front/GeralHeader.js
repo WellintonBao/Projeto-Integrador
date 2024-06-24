@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/TCStyle.css';
-import IconMago from './icons/IconMago.jpeg';
+import IconMago from './media/icons/IconMago.jpeg';
 
 function TelasHeader() {
   

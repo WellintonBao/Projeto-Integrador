@@ -1,7 +1,7 @@
 import React from 'react';
-import IconCanecas from './icons/IconCanecas.jpeg';
-import IconEspada from './icons/IconEspada.jpeg';
-import IconPergaminho from './icons/IconPergaminho.jpeg';
+import IconCanecas from './media//icons/IconCanecas.jpeg';
+import IconEspada from './media//icons/IconEspada.jpeg';
+import IconPergaminho from './media//icons/IconPergaminho.jpeg';
 
 
 
