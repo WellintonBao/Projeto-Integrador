@@ -1,22 +1,16 @@
 const express = require('express');
+const cadastro = require('./Controller/cadastro.js');
 require('dotenv').config()
-
-const pgp = require("pg-promise")({});
-const usuario = process.env.DB_USER;
-const senha = process.env.DB_PASSWORD;
-const host = process.env.DB_HOST;
-const porta = process.env.DB_PORT;
-const banco_de_dados = process.env.DB_NAME;
-const db = pgp(`postgres://${usuario}:${senha}@${host}:${porta}/${banco_de_dados}`);
 
 //Servidor
 const app = express();
-app.listen(3001, () => console.log("Servidor rodando na porta 3001"));
+app.listen(3333, () => console.log("Servidor rodando na porta 3001, use a URL http://localhost:3333, para consumir a API!"));
 
+//ROTAS
 
+//Cadastrar usuario
+app.get("/cadastro", cadastro.cadastraUsuario);
 
-
-app.get("/", async (req,res)=>{
-    const usuar = await db.any("Select * from paradin.usuario;");
-    res.send(`Hello, world, ${usuar[0].email}`);
+//Login 
+    app.get('/login', async (req,res)=>{
 })
