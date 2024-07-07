@@ -19,7 +19,7 @@ const[theme, setTheme] = useState('dark');
             background: 'none',
             border: 'none',
             padding: 0,
-            cursor: 'pointer',
+            /* cursor: 'pointer', */
         }} 
     >
 

@@ -9,7 +9,7 @@
     background-color: #d1e878;
 }
 .bitmap {
-    cursor: pointer;
+    /* cursor: pointer; */
     height: 25px; 
 }
 .darkbody {
@@ -61,7 +61,7 @@ a, h1, h2, h3{
 .button-cursos {
     border: none;
     background: none;
-    cursor: pointer;
+    /* cursor: pointer; */
     padding: 1;
     color: white;
     text-decoration: none;

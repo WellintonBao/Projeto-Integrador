@@ -3,8 +3,8 @@ import '../styles/TCStyle.css';
 
 import HellBlue from '../media/backgrounds/HellBlue.gif';
 import HellRed from '../media/backgrounds/HellRed.gif';
-import Josette from '../media/backgrounds/Josette.gif';
 import PopUpDiablo from '../media/buttons/PopUpDiablo.png';
+import gold_sword from '../media/icons/gold_sword.png';
 
 
 const TelaLogin = () => {
@@ -14,12 +14,11 @@ const TelaLogin = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [message, setMessage] = useState('');
 
-    
-    document.addEventListener('mousemove', (e) => {
+/*     document.addEventListener('mousemove', (e) => {
         const cursor = document.querySelector('.josette-cursor');
         cursor.style.left = `${e.clientX}px`;
         cursor.style.top = `${e.clientY}px`;
-        });
+        }); */
 
     const handleSubmit = () => {
         if (password === confirmPassword) {
@@ -29,10 +28,10 @@ const TelaLogin = () => {
             console.log('Senha:', password);
 
             // Mova os valores para variáveis ou faça outra lógica
-            setMessage('Cadastro realizado com sucesso!');
+            console.log('Cadastro realizado com sucesso!');
         } else {
             // As senhas não coincidem
-            setMessage('As senhas não coincidem.');
+            console.log('As senhas não coincidem.');
         }
     };
 
@@ -41,19 +40,19 @@ const TelaLogin = () => {
             <div className="popup-container" id="popup">
                 <div className="popup-content">
                     <h2 style={{marginBottom: "10%"}}>Kadastrar</h2>
-                    <input className="input" type="text" placeholder="Apelido" value={username}
+                    <input className="input mouse_hover" type="text" placeholder="Apelido" value={username}
                         onChange={(e) => setUsername(e.target.value)}></input>
 
-                    <input className="input" type="text" placeholder="Email" value={email}
+                    <input className="input mouse_hover" type="text" placeholder="Email" value={email}
                         onChange={(e) => setEmail(e.target.value)}></input>
 
-                    <input className="input" type="text" placeholder="Senha" value={password}
+                    <input className="input mouse_hover" type="text" placeholder="Senha" value={password}
                         onChange={(e) => setPassword(e.target.value)}></input>
 
-                    <input className="input" type="text" placeholder="Confirmar senha" value={confirmPassword}
+                    <input className="input mouse_hover" type="text" placeholder="Confirmar senha" value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}></input>
                     <div>
-                        <button onClick={handleSubmit}> Konfirmar</button>
+                        <button className="mouse_hover" onClick={handleSubmit}> Konfirmar</button>
                         {/* <button onClick={() => document.getElementById('popup').style.display = 'none'}/> */}
                     </div>
                 </div>

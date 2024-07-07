@@ -10,7 +10,8 @@ const App = () => {
     
     return (
 
-        <div >   {/* className="container-fluid w-100 mw-100 p-0" */}         
+        <div
+            >   {/* className="container-fluid w-100 mw-100 p-0" */}         
             <link 
                 href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
                 rel="stylesheet"
@@ -20,13 +21,11 @@ const App = () => {
             <GeralHeader/>
             {/* <GeralBarraNav/>
             <GeralMain/> */}
-            <body>
-                <div class="josette-cursor"></div>
                 <main>
+
                     <TelaLogin/>
                 </main>
                 
-            </body>
         </div>
     );
 }

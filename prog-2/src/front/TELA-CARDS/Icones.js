@@ -1,5 +1,4 @@
 import React from 'react';
-/* import BotaoDark from './BotaoDark'; */
 
 const Icones = () => {
     return (
@@ -14,5 +13,4 @@ const Icones = () => {
         </div>
     );
 };
-
 export default Icones;

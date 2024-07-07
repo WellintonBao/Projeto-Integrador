@@ -1,9 +1,7 @@
 import React from 'react';
-import IconCanecas from './media//icons/IconCanecas.jpeg';
-import IconEspada from './media//icons/IconEspada.jpeg';
-import IconPergaminho from './media//icons/IconPergaminho.jpeg';
-
-
+import IconCanecas    from './media/icons/IconCanecas.jpeg';
+import IconEspada     from './media/icons/IconEspada.jpeg';
+import IconPergaminho from './media/icons/IconPergaminho.jpeg';
 
 const GeralBarraNav = () => {
     return (

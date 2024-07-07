@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 ::placeholder {
     font-style: italic;
@@ -10,20 +12,22 @@
     width: 250px;
     margin-bottom: 20px;
 }
-body {
-    cursor: none;
-    /* url('../media/backgrounds/Josette.gif'), auto; */
-}
-.josette-cursor {
-    width: 90px; /* Tamanho do GIF */
-    height: 90px; /* Tamanho do GIF */
-    position: absolute;
-    pointer-events: none; /* Permite interagir com outros elementos */
-    background: url('../media/backgrounds/Josette.gif') no-repeat center center;
-    background-size: contain; /* Ajusta a imagem ao tamanho do elemento */
-    z-index: 9999; /* Garante que o cursor fique acima de outros elementos */
-}
 
+/* .josette-cursor {
+    width: 90px;
+    height: 90px; Tamanho do GIF
+    position: absolute;
+    pointer-events: none; /* Permite interagir com outros elementos 
+    background: url('../media/backgrounds/Josette.gif') no-repeat center center;
+    background-size: contain; /* Ajusta a imagem ao tamanho do elemento 
+    z-index: 9999; /* Garante que o cursor fique acima de outros elementos 
+} */
+body{
+    cursor: url("../media/icons/gold_sword_bd.png"), auto;
+}
+.mouse_hover:hover {
+    cursor: url("../media/icons/gold_sword_swing_bd.png"), auto;
+}
 header{
     background-color: black;
     color: rgb(105, 1, 1);
@@ -40,7 +44,7 @@ main{
     position: fixed;
     background-size: cover;
     background-position: center;
-    top: 10%;
+    /* top: 10%; */
     right: 0;
     width: 100%;
     height: 100%;
@@ -62,19 +66,18 @@ main{
 }
 .popup-content {
     background: url('../media/buttons/PopUpDiablo.png') 
-                no-repeat center center;
+                no-repeat center;
     padding: 5%;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* border-radius: 5px; */
     text-align: center;
-    max-width: 500px;
     width: 100%;
-    height: 80%;
+    height: 75%;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     color:gold;
     font-family:Georgia, 'Times New Roman', Times, serif;
     outline: none;
 }
-
 .icones{
     width:  40px;
     height: 40px;
@@ -83,7 +86,8 @@ main{
     margin: 3px;
 }
 .icones:hover {
-    outline: 4px solid lightblue; 
+    outline: 4px solid lightblue;
+    cursor: url("../media/icons/gold_sword_swing_bd.png"), auto;
 }
 
 /* max = se diminuir de  |   min = se passar de */
@@ -92,5 +96,20 @@ main{
     .icones {
         width:  30px;
         height: 30px;
+    }
+}
+
+@media screen and (min-width: 1439px) {
+    .popup-content {
+        padding-top: 10%;
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+}
+@media screen and (min-width: 1439px) {
+    .popup-content {
+        padding-top: 10%;
+        padding-right: 5%;
+        padding-left: 5%;
     }
 }
