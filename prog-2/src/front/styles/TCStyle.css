@@ -13,15 +13,6 @@
     margin-bottom: 20px;
 }
 
-/* .josette-cursor {
-    width: 90px;
-    height: 90px; Tamanho do GIF
-    position: absolute;
-    pointer-events: none; /* Permite interagir com outros elementos 
-    background: url('../media/backgrounds/Josette.gif') no-repeat center center;
-    background-size: contain; /* Ajusta a imagem ao tamanho do elemento 
-    z-index: 9999; /* Garante que o cursor fique acima de outros elementos 
-} */
 body{
     cursor: url("../media/icons/gold_sword_bd.png"), auto;
 }
@@ -44,7 +35,6 @@ main{
     position: fixed;
     background-size: cover;
     background-position: center;
-    /* top: 10%; */
     right: 0;
     width: 100%;
     height: 100%;
@@ -54,9 +44,7 @@ main{
     /* display: none; Esconde o pop-up inicialmente */
     display: flex;
     position: fixed;
-    top: 10;
     left: 0;
-    padding-bottom: 4%;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
@@ -88,6 +76,11 @@ main{
 .icones:hover {
     outline: 4px solid lightblue;
     cursor: url("../media/icons/gold_sword_swing_bd.png"), auto;
+}
+
+.verSenha {
+    background: none;
+    border: none;
 }
 
 /* max = se diminuir de  |   min = se passar de */
