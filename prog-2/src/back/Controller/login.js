@@ -10,6 +10,7 @@ async function verificaLogin(req,res){
         res.status(400).send("Email ou senha incorretos.");
     }
     const result = await bcrypt.compare(req.headers.senha,login[0].senha);
+    
     if(result){
         res.status(200).send("Usuario logado com sucesso!");
     }else{

@@ -3,7 +3,7 @@ const moment = require('moment');
 const usuario = require('../bancoScripts/usuario.js');
 
 async function cadastraUsuario(req,res){
-    if(!req.headers.email || !req.headers.senha || !req.headers.apelido || !req.headers.nome || !req.headers.datanascimento || !req.headers.situa ){
+    if(!req.headers.email || !req.headers.senha || !req.headers.apelido || !req.headers.nome || !req.headers.datanascimento){
         res.status(400).send("Faltando dados para cadastro");
         return;
     }
