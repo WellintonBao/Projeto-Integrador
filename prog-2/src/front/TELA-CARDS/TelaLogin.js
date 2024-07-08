@@ -21,15 +21,7 @@ const TelaLogin = () => {
         setEye(!eye);
     }
 
-    function verSenha(id_input, id_button) {
-        var input_senha = document.getElementById(id_input);
-        var botao_ver = document.getElementById(id_button);
-       console.log(input_senha);
-       console.log(botao_ver);
-    }
-    console.log(eye)
-
-    const handleSubmit = () => {
+    const handleLogar = () => {
         if (password === confirmPassword) {
             console.log('Nome:', username);
             console.log('Email:', email);
@@ -52,38 +44,38 @@ const TelaLogin = () => {
                         onChange={(e) => setEmail(e.target.value)}></input>
 
                     <input
-                        id="inp_senha"
                         className="input mouse_hover"
                         type={eye ? "password" : "text"}
                         placeholder="Senha"
                         style={{width: "205px"}}
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}>
+                        onChange={(e) => setPassword(e.target.value)}
+                        >
                     </input>
-                    <button 
-                        id="pb_ver_1"
+                    <button
                         className="verSenha mouse_hover"
-                        onClick={negaEye
-                        }>
+                        onClick={negaEye}
+                        >
                         <img src = {eye ? icon_eye_no : icon_eye}></img>
                     </button>
 
-                    <input 
-                        id="inp_con_senha"
+                    <input
                         className="input mouse_hover" 
                         type={eye ? "password" : "text"}
                         placeholder="Confirmar senha" 
                         style={{width: "205px"}}
                         value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}>
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        >
                     </input>
                     <button
-                        id="pb_ver_2"
-                        className="verSenha mouse_hover">
+                        className="verSenha mouse_hover"
+                        onClick={negaEye}
+                        >
                         <img src = {eye ? icon_eye_no : icon_eye}></img>
                     </button>
                     <div>
-                        <button className="mouse_hover" onClick={handleSubmit}> Konfirmar</button>
+                        <button className="mouse_hover" onClick={handleLogar}> Konfirmar</button>
                     </div>
                 </div>
             </div>
