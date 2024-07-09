@@ -7,7 +7,7 @@ async function cadastraUsuario(req,res){
         res.status(400).send("Faltando dados para cadastro");
         return;
     }
-    const dataFormatada = moment(req.headers.datanascimento,'DD/MM/YYYY').format('YYYY-MM-DD');
+    
     const senhaC = await bcrypt.hash(req.headers.senha,8);
     const novoUser = {
         email: req.headers.email,

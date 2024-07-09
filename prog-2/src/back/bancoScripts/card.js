@@ -20,7 +20,7 @@ async function insereCard(req,res){
     return 0;
 }
 
-async function buscaCard(req,res){
+async function projetaCard(req,res){
     try{
         const email = req.body.email
 
@@ -69,6 +69,37 @@ async function deletaCard(req,res){
 
 
 async function atualizaCard(req,res){
-    
+        // Array para armazenar os conjuntos de colunas = valores
+        const setClauses = [];
+        // Array para armazenar os valores
+        const values = [];
+        if(!req.body){
+            return;
+        }
+        // Percorrer as chaves do objeto updates
+        Object.keys(req.body).forEach((key, index) => {
+          setClauses.push(`${key} = $${index + 1}`);
+          values.push(req.body[key]);
+        });
+      
+        // Adicionar o cardId aos valores
+        values.push(req.headers.idcard);
+        // Construir a consulta SQL
+        const query = `
+          UPDATE paradin.card
+          SET ${setClauses.join(', ')}
+          WHERE idcard = $${values.length};
+        `;
+      
+        try {
+          // Executar a consulta
+          const result = await db.none(query, values);
+          return 1;
+        } catch (error) {
+          console.error('Erro ao atualizar o card:', error);
+          return;
+        }
 }
-module.exports ={insereCard,buscaCard,deletaCard};
+      
+
+module.exports ={insereCard,projetaCard,deletaCard,atualizaCard};
