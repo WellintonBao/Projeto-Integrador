@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/TCStyle.css';
 import IconMago from './media/icons/IconMago.jpeg';
 
-function TelasHeader() {
+function GeralHeader() {
   
     return (
         <header>
@@ -15,7 +15,7 @@ function TelasHeader() {
                     </div>
 
                     <div className="col-1 p-0">
-                        <a> {/* ALTERAR O LINK PARA A MAIN */}
+                        <a to='/Sucesso'>
                             <img src={IconMago} className="icones" alt="Perfil" 
                                  style={{border: "2px solid yellow"}}
                             />
@@ -27,4 +27,4 @@ function TelasHeader() {
         </header>
     );
 }
-export default TelasHeader;
+export default GeralHeader;

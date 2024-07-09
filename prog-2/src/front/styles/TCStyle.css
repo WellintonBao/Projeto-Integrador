@@ -16,7 +16,7 @@
 body{
     cursor: url("../media/icons/gold_sword_bd.png"), auto;
 }
-.mouse_hover:hover {
+.mouse_over:hover {
     cursor: url("../media/icons/gold_sword_swing_bd.png"), auto;
 }
 header{
