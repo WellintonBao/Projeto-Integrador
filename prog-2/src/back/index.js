@@ -1,11 +1,13 @@
 const express = require('express');
 //const cadastro = require('./Controller/cadastro.js');
 //const login = require('./Controller/login.js');
-const card = require('./Controller/card.js');
+const card = require('./Controller/cardController.js');
+const noticia = require('./Controller/noticiaController.js');
 require('dotenv').config()
 
 const cors = require("cors");
 const db = require('./banco.js');
+const moment = require('moment');
 
 const session = require("express-session");
 const passport = require("passport");
@@ -20,12 +22,26 @@ app.use(cors());
 app.use(express.json());
 
 
+//CRUD DE NOTICIA
+app.post('/noticia/criar', noticia.insere);
 
+app.get('/noticia/projeta', noticia.projeta);
+
+app.put('/noticia/atualiza', noticia.atualiza);
+
+app.delete('/noticia/deletar', noticia.deletar);
+
+//CRUD DE CARD
 app.post('/card/criar',card.criaCard);
 
-app.get('/card/busca',card.verificaCard);
+app.get('/card/projeta',card.verificaCard);
 
-app.delete('/card/deletar',card.apagaCard)
+app.delete('/card/deletar',card.apagaCard);
+
+app.put('/card/atualiza',card.updateCard);
+
+
+
 
 app.use(
 	session({
@@ -182,6 +198,7 @@ app.post("/novoUsuario", async (req, res) => {
 		const userEmail = req.body.email;
 		const userPasswd = req.body.passwd;
 		const salt = bcrypt.genSaltSync(saltRounds);
+		const dataFormatada = moment(req.body.datanascimento,'DD/MM/YYYY').format('YYYY-MM-DD');
 		const hashedPasswd = bcrypt.hashSync(userPasswd, salt);
         const novoUser = {
             nome: req.body.nome,
@@ -191,13 +208,14 @@ app.post("/novoUsuario", async (req, res) => {
         };
 
 		console.log(`Email: ${userEmail} - Passwd: ${hashedPasswd}`);
-		db.none(`INSERT INTO usuario (email,senha,nome,datanas,apelido,situa) 
-                VALUES ($1, $2,$3,$4,$5,default);`, [
+		db.none(`INSERT INTO paradin.usuario (email,senha,nome,datanas,apelido,situa) 
+                VALUES ($1, $2,$3,$4,$5,$6);`, [
 			userEmail,
 			hashedPasswd,
             novoUser.nome,
             novoUser.datanascimento,
             novoUser.apelido,
+			novoUser.situa
 		]);
 		res.sendStatus(200);
 	} catch (error) {
