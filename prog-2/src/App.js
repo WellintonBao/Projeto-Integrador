@@ -1,15 +1,10 @@
 import React from 'react';
-import './front/styles/Style.css';
 
-
-import GeralHeader    from './front/GeralHeader';
-import GeralBarraNav  from './front/GeralBarraNav';
 import TelaLogin      from './front/TELA-CARDS/TelaLogin';
 import TelaTeste      from './front/TELA-CARDS/TelaTeste';
 import TelaNotFound   from './front/TELA-CARDS/TelaNotFound';
 
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-
 
 const App = () => {
     
