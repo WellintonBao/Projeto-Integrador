@@ -1,6 +1,7 @@
 const express = require('express');
 //const cadastro = require('./Controller/cadastro.js');
 //const login = require('./Controller/login.js');
+const jwt = require('jsonwebtoken');
 const card = require('./Controller/cardController.js');
 const noticia = require('./Controller/noticiaController.js');
 require('dotenv').config()
@@ -57,14 +58,14 @@ app.use(passport.session());
 passport.use(
 	new LocalStrategy(
 		{
-			usernameField: "username", // Assuming the user logs in with an email
+			usernameField: "email", // Assuming the user logs in with an email
 			passwordField: "password",
 		},
 		async (username, password, done) => {
 			try {
 				// Find the user by email in the database
 				const user = await db.oneOrNone(
-					"SELECT * FROM usuario WHERE email = $1;",
+					"SELECT * FROM paradin.usuario WHERE email = $1;",
 					[username],
 				);
 
@@ -76,7 +77,7 @@ passport.use(
 				// Compare the provided password with the hashed password in the database
 				const passwordMatch = await bcrypt.compare(
 					password,
-					user.user_password,
+					user.senha,
 				);
 
 				// If the passwords match, return the user object
@@ -109,7 +110,7 @@ passport.deserializeUser(function (user, cb) {
 	});
 });
 
-app.listen(3010, () => console.log("Servidor rodando na porta 3010."));
+app.listen(3033, () => console.log("Servidor rodando na porta 3033."));
 
 app.post(
 	"/login",
@@ -117,7 +118,10 @@ app.post(
 		failureMessage: true,
 	}),
 	function (req, res) {
-		res.send({ token: 1234 }).status(200);
+		console.log(req.user.email)
+		const tokenj = jwt.sign({email: req.user.email },process.env.CHAVE_TOKEN
+		)
+		res.send({ token: tokenj }).status(200);
 	},
 );
 

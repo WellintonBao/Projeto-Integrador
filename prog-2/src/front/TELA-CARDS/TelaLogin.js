@@ -24,9 +24,10 @@ const TelaLogin = () => {
     }
 
     const handleLogar = async() => {
-        // const response = await axios.post("http://localhost3010/login",{email, password}); BANCO?? TEM QUE VER O QUE RETORNA FAZER IF EXISTE AQUI
-
-         if (password != "") {
+        const response = await axios.post("http://localhost:3033/login",{email, password}); //BANCO?? TEM QUE VER O QUE RETORNA FAZER IF EXISTE AQUI
+         if (response.status === 200) {
+            localStorage.setItem('token',response.data.token);
+            //localStorage.setItem('email',email)
              console.log('Logado com sucesso!');
              Navigate("/Biblioteca")
          } else {
