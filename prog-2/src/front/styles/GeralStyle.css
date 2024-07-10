@@ -1,0 +1,80 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+::placeholder {
+    font-style: italic;
+    opacity: 1;
+}
+.input {
+    color: white;
+    background: rgba(0, 0, 0, 0.9);
+    border-color: gold;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+body{
+    cursor: url("../media/icons/gold_sword_bd.png"), auto;
+}
+
+button{
+    color: gold;
+    width: 200px;
+    background: url("../media/buttons/buttonDiablo.png") no-repeat center;
+    background-size: cover;
+    box-shadow: 0px 0px 20px 5px black;
+}
+button:hover{
+    box-shadow: 0px 0px 20px 5px blue;
+}
+.mouse_over:hover {
+    cursor: url("../media/icons/gold_sword_swing_bd.png"), auto;
+}
+header{
+    background-color: black;
+    color: rgb(105, 1, 1);
+    font-family: 'MedievalSharp', serif;
+}
+main{
+    height: 100%;
+    position:static;
+    display: flex;
+    background-color: #1f1f1f;
+}
+
+.icones{
+    width:  40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 3px;
+}
+.icones:hover {
+    box-shadow: 0px 0px 20px 5px purple;
+    cursor: url("../media/icons/gold_sword_swing_bd.png"), auto;
+}
+.icon-perfil:hover {
+    box-shadow: 0px 0px 20px 10px blue;
+}
+
+
+/* max = se diminuir de  |   min = se passar de */
+/*CELULAR*/
+@media screen and (max-width: 430px) {
+    .icones {
+        width:  30px;
+        height: 30px;
+    }
+}
+
+/* @media screen and (min-width: 900px) {
+
+} */
+/*@media screen and (min-width: 1439px) {
+    .popup-content {
+        padding-top: 15%;
+        padding-bottom: 15%;
+        padding-right: 5%;
+        padding-left: 5%;
+    } 
+}*/
