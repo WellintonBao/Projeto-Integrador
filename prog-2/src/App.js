@@ -1,7 +1,7 @@
 import React from 'react';
 
 import TelaLogin      from './front/TELA-CARDS/TelaLogin';
-import TelaTeste      from './front/TELA-CARDS/TelaTeste';
+import TelaTeste      from './front/TELA-CARDS/TelaBiblioteca';
 import TelaNotFound   from './front/TELA-CARDS/TelaNotFound';
 
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
@@ -16,7 +16,7 @@ const App = () => {
                 <Route path="/" element={<Navigate to="/login" />} />
                 <Route path='/Error' Component={ TelaNotFound}/>
                 <Route path='/Login' Component={ TelaLogin}/>
-                <Route path='/Sucesso' Component={ TelaTeste}/>
+                <Route path='/Biblioteca' Component={ TelaTeste}/>
             </Routes>
         </Router>
 
