@@ -8,11 +8,20 @@ import HellBlue from '../media/backgrounds/HellBlue.gif';
 
 import GeralHeader from '../GeralHeader';
 import GeralBarraNav from '../GeralBarraNav';
+import JojoGraf from './JojoGraf';
 
 function TelaBiblioteca() {
-
     const Navigate = useNavigate();
     
+    //Teste grafico
+    const card = {
+        forca: 10,
+        inteligencia: 15,
+        carisma: 8,
+        destreza: 12,
+        sabedoria: 14,
+        constituicao: 11
+      };
 
     return (
         <div >
@@ -30,7 +39,9 @@ function TelaBiblioteca() {
                         Card Name
                     </div>
                     <div className='card_body' >
-                        <div className='card_graph'>statistics</div>
+                        <div className='card_graph'>
+                            <JojoGraf card={card}/>
+                        </div>
                     </div>
                     <div className='card_footer' >
                         Description
