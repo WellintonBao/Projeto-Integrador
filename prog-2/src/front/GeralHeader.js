@@ -1,9 +1,9 @@
 import React from 'react';
-import './styles/GeralStyle.css';
-
 import { useNavigate, Link } from 'react-router-dom';
 
+import './styles/GeralStyle.css';
 import IconMago from './media/icons/IconMago.jpeg';
+
 
 function GeralHeader() {
     const navigate=useNavigate();

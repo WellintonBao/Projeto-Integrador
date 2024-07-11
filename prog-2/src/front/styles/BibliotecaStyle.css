@@ -1,0 +1,79 @@
+.popup {
+    background-image: url("../media/backgrounds/RockWallGray.png");
+    background-size: contain;
+    display: flex;
+    min-height:75px;
+    max-height: 430px;
+
+    color: white;
+}
+
+
+.card {
+    border-radius: 5%;
+    background-image: url("../media/backgrounds/RockWallRed.png");
+    background-size: contain;
+    display: flex;
+    
+    margin-left: 4%;
+    margin-right: 4%;
+    min-width: 25%;
+    
+    align-items: center;
+}
+.card:hover {
+    padding: 10px;
+    box-shadow: 0px 0px 15px 5px gold;
+     -webkit-box-shadow: 0px 0px 15px 5px gold;
+    -moz-box-shadow: 0px 0px 15px 5px gold;
+    cursor: url("../media/icons/gold_sword_swing_bd.png"), auto;
+}
+
+.card_header {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.card_body {
+    padding-bottom: 5%;
+}
+.card_graph {
+    background-color: gray;
+    align-content: center;
+    min-height: 200px;
+    min-width: 200px;
+}
+.card_footer {
+    text-align: center;
+    overflow: scroll;
+    margin-bottom: 5%;
+    min-width: 300px;
+    min-height: 100px;
+}
+label:hover {
+    border: 3px solid gray;
+    cursor: url("../media/icons/gold_sword_swing_bd.png"), auto;
+}
+
+
+/*max = se diminuir de  |   min = se passar de */
+/*CELULAR*/
+@media screen and (max-width: 430px) {
+    #div2{
+        display:none;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .card_footer {
+        min-width: 100px;
+    }
+    #div3{
+        display:none;
+    }
+} 
+
+@media screen and (max-width: 1439px) {
+    .popup-content {
+    } 
+}

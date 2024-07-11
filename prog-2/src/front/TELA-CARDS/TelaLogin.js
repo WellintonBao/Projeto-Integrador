@@ -24,7 +24,7 @@ const TelaLogin = () => {
     }
 
     const handleLogar = async() => {
-        // const response = await axios.post("http://localhost3010/login",{email, password}); BANCO?? TEM QUE VER O QUE RETORNA FAZER IF EXISTE AQUI
+        // const response = await axios.post("http://localhost3010/login",{email, password});
 
          if (password != "") {
              console.log('Logado com sucesso!');
@@ -37,8 +37,9 @@ const TelaLogin = () => {
 
     return (
         <div>
-            <div>
-            <GeralHeader/>
+            <img className="background-img" src={HellRed}/>
+            <div className='container p-0 m-0 mw-100' style={{backgoundColor: "pink"}}>
+                <GeralHeader/>
             </div>
             <div className="popup-background">
                     <div className="popup-content">
@@ -76,7 +77,6 @@ const TelaLogin = () => {
                         </div>
                     </div>
             </div>
-            <img className="background-img" src={HellRed}/>
         </div>
     );
 };

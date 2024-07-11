@@ -1,34 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import IconCanecas    from './media/icons/IconCanecas.jpeg';
 import IconEspada     from './media/icons/IconEspada.jpeg';
 import IconPergaminho from './media/icons/IconPergaminho.jpeg';
 
 const GeralBarraNav = () => {
     return (
-        <div className="container min-w-100" 
-            style={{backgroundColor: " white",
-                    maxHeight: "100px"
-            }}>
-            <div className="container">
-                <nav> 
-                    <ul className="p-0 m-0">
-                        <li className="d-inline">
-                            <a href="https//www.youtube.com"> {/* ALTERAR O LINK PARA A MAIN */}
-                                <img className="icones" src={IconCanecas} alt="Perfil"/>
-                            </a>
-                        </li>
-                        <li className="d-inline">
-                            <a href="https//www.youtube.com"> {/* ALTERAR O LINK PARA A MAIN */}
-                                <img className="icones" src={IconEspada} alt="Perfil"/>
-                            </a>
-                        </li>
-                        <li className="d-inline">
-                            <a href="https//www.youtube.com"> {/* ALTERAR O LINK PARA A MAIN */}
-                                <img className="icones" src={IconPergaminho} alt="Perfil"/>
-                            </a>
-                        </li>
-                    </ul> 
-                </nav>
+        <div  style={{ maxHeight: "100px", backgroundColor: "white"}}>
+
+            <div className='container'>
+
+                        <Link to="/Error">
+                            <img className="icones" src={IconCanecas} alt="Perfil"/>
+                        </Link>
+
+                        <Link to="/Error">
+                            <img className="icones" src={IconEspada} alt="Perfil"/>
+                        </Link>
+
+                        <Link to="/Error">
+                            <img className="icones" src={IconPergaminho} alt="Perfil"/>
+                        </Link>
+                        
             </div>
         </div>
     );
