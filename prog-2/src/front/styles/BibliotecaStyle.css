@@ -1,79 +1,70 @@
 .popup {
     background-image: url("../media/backgrounds/RockWallGray.png");
     background-size: contain;
-    display: flex;
-    min-height:75px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    min-height: 75px;
     max-height: 430px;
-
     color: white;
+    overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
 }
-
 
 .card {
     border-radius: 5%;
     background-image: url("../media/backgrounds/RockWallRed.png");
     background-size: contain;
     display: flex;
-    
-    margin-left: 4%;
-    margin-right: 4%;
-    min-width: 25%;
-    
+    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 10px ;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    color: white;
+    /*min-width: 150px;*/
+    margin: 0 auto;
+    width: 250px;
 }
+
 .card:hover {
-    padding: 10px;
-    box-shadow: 0px 0px 15px 5px gold;
-     -webkit-box-shadow: 0px 0px 15px 5px gold;
-    -moz-box-shadow: 0px 0px 15px 5px gold;
-    cursor: url("../media/icons/gold_sword_swing_bd.png"), auto;
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .card_header {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .card_body {
-    padding-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15px;
 }
+
 .card_graph {
     background-color: gray;
-    align-content: center;
-    min-height: 200px;
-    min-width: 200px;
+    min-height: 10px;
+    min-width: 10px;
+    margin-bottom: 15px;
 }
+
 .card_footer {
     text-align: center;
-    overflow: scroll;
-    margin-bottom: 5%;
-    min-width: 300px;
-    min-height: 100px;
-}
-label:hover {
-    border: 3px solid gray;
-    cursor: url("../media/icons/gold_sword_swing_bd.png"), auto;
+    overflow: hidden;
+    max-height: 100px;
+    font-size: 1rem;
+    margin-bottom: 10px;
 }
 
-
-/*max = se diminuir de  |   min = se passar de */
-/*CELULAR*/
-@media screen and (max-width: 430px) {
-    #div2{
-        display:none;
-    }
-}
-
-@media screen and (max-width: 910px) {
-    .card_footer {
-        min-width: 100px;
-    }
-    #div3{
-        display:none;
-    }
-} 
-
-@media screen and (max-width: 1439px) {
-    .popup-content {
-    } 
+.card_image{
+    width: 80px;
 }

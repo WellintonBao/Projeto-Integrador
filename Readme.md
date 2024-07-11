@@ -30,3 +30,12 @@ se atualizar das atualizações do jogo oficial e categorizar os monstros e npcs
   Criação de cards próprios para o usuário;
   
   Comunidade para os jogadores compartilharem seus jogos e ideias.
+
+
+#### Variaveis de ambiente
+DB_USER = postgres
+DB_PASSWORD = postgres
+DB_HOST = localhost
+DB_PORT = 5432
+DB_NAME = faculdade
+CHAVE_TOKEN = projeto-integrador-paradin

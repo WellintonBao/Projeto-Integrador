@@ -11,16 +11,12 @@ const GeralBarraNav = () => {
 
             <div className='container'>
 
-                        <Link to="/Error">
+                        <Link to="/registro">
                             <img className="icones" src={IconCanecas} alt="Perfil"/>
                         </Link>
 
-                        <Link to="/Error">
+                        <Link to="/cadastro">
                             <img className="icones" src={IconEspada} alt="Perfil"/>
-                        </Link>
-
-                        <Link to="/Error">
-                            <img className="icones" src={IconPergaminho} alt="Perfil"/>
                         </Link>
                         
             </div>

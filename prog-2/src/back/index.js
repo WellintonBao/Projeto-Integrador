@@ -1,9 +1,6 @@
 const express = require('express');
-//const cadastro = require('./Controller/cadastro.js');
-//const login = require('./Controller/login.js');
 const jwt = require('jsonwebtoken');
 const card = require('./Controller/cardController.js');
-const noticia = require('./Controller/noticiaController.js');
 require('dotenv').config()
 
 const cors = require("cors");
@@ -23,23 +20,7 @@ app.use(cors());
 app.use(express.json());
 
 
-//CRUD DE NOTICIA
-app.post('/noticia/criar', noticia.insere);
 
-app.get('/noticia/projeta', noticia.projeta);
-
-app.put('/noticia/atualiza', noticia.atualiza);
-
-app.delete('/noticia/deletar', noticia.deletar);
-
-//CRUD DE CARD
-app.post('/card/criar',card.criaCard);
-
-app.get('/card/projeta',card.verificaCard);
-
-app.delete('/card/deletar',card.apagaCard);
-
-app.put('/card/atualiza',card.updateCard);
 
 
 
@@ -54,6 +35,21 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+
+passport.serializeUser(function (user, cb) {
+	process.nextTick(function () {
+		return cb(null, {
+			user_id: user.username,
+			username: user.username,
+		});
+	});
+});
+
+passport.deserializeUser(function (user, cb) {
+	process.nextTick(function () {
+		return cb(null, user);
+	});
+});
 
 passport.use(
 	new LocalStrategy(
@@ -95,22 +91,18 @@ passport.use(
 	),
 );
 
-passport.serializeUser(function (user, cb) {
-	process.nextTick(function () {
-		return cb(null, {
-			user_id: user.username,
-			username: user.username,
-		});
-	});
-});
-
-passport.deserializeUser(function (user, cb) {
-	process.nextTick(function () {
-		return cb(null, user);
-	});
-});
-
 app.listen(3033, () => console.log("Servidor rodando na porta 3033."));
+
+//CRUD DE CARD
+app.post('/card/criar',card.criaCard);
+
+app.get('/card/projeta',card.verificaCard);
+
+app.delete('/card/deletar',card.apagaCard);
+
+app.put('/card/atualiza',card.updateCard);
+
+app.get('/detalhes',card.validaId);
 
 app.post(
 	"/login",
@@ -142,78 +134,24 @@ app.get("/", (req, res) => {
 	res.send("Hello, world!");
 });
 
-/*app.get(
-	"/clientes",
-	passport.authenticate("local", { failureMessage: true }),
-	async (req, res) => {
-		try {
-			const clientes = await db.any("SELECT * FROM clientes;");
-			console.log("Retornando todos clientes.");
-			res.json(clientes).status(200);
-		} catch (error) {
-			console.log(error);
-			res.sendStatus(400);
-		}
-	},
-);
-
-app.get(
-	"/cliente",
-	passport.authenticate("local", { failureMessage: true }),
-	async (req, res) => {
-		try {
-			const clienteId = parseInt(req.query.id);
-			console.log(`Retornando ID: ${clienteId}.`);
-			const clientes = await db.one(
-				"SELECT id, nome, email FROM clientes WHERE id = $1;",
-				clienteId,
-			);
-			res.json(clientes).status(200);
-		} catch (error) {
-			console.log(error);
-			res.sendStatus(400);
-		}
-	},
-);
-
-app.post(
-	"/cliente",
-	passport.authenticate("local", { failureMessage: true }),
-	async (req, res) => {
-		try {
-			const clienteNome = req.body.nome;
-			const clienteEmail = req.body.email;
-			console.log(`Nome: ${clienteNome} - Email: ${clienteEmail}`);
-			db.none("INSERT INTO clientes (nome, email) VALUES ($1, $2);", [
-				clienteNome,
-				clienteEmail,
-			]);
-			res.sendStatus(200);
-		} catch (error) {
-			console.log(error);
-			res.sendStatus(400);
-		}
-	},
-);*/
 
 app.post("/novoUsuario", async (req, res) => {
 	const saltRounds = 10;
 	try {
 		const userEmail = req.body.email;
-		const userPasswd = req.body.passwd;
+		const userPasswd = req.body.senha;
 		const salt = bcrypt.genSaltSync(saltRounds);
-		const dataFormatada = moment(req.body.datanascimento,'DD/MM/YYYY').format('YYYY-MM-DD');
+		const dataFormatada = moment(req.body.dataNascimento,'DD/MM/YYYY').format('YYYY-MM-DD');
 		const hashedPasswd = bcrypt.hashSync(userPasswd, salt);
         const novoUser = {
             nome: req.body.nome,
             apelido: req.body.apelido,
-            datanascimento: dataFormatada,
-            situa: req.body.situa
+            datanascimento: dataFormatada
         };
 
 		console.log(`Email: ${userEmail} - Passwd: ${hashedPasswd}`);
 		db.none(`INSERT INTO paradin.usuario (email,senha,nome,datanas,apelido,situa) 
-                VALUES ($1, $2,$3,$4,$5,$6);`, [
+                VALUES ($1, $2,$3,$4,$5,default);`, [
 			userEmail,
 			hashedPasswd,
             novoUser.nome,
@@ -228,16 +166,4 @@ app.post("/novoUsuario", async (req, res) => {
 	}
 });
 
-//Servidor
-/*const app = express();
-app.listen(3333, () => console.log("Servidor rodando na porta 3333, use a URL http://localhost:3333, para consumir a API!"));
 
-//ROTAS
-
-//Cadastrar usuario
-app.get('/cadastro', cadastro.cadastraUsuario);
-
-//Login 
-app.get('/login', login.verificaLogin);*/
-
-//Card
