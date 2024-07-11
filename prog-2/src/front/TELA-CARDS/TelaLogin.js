@@ -24,9 +24,10 @@ const TelaLogin = () => {
     }
 
     const handleLogar = async() => {
-        // const response = await axios.post("http://localhost3010/login",{email, password});
-
-         if (password != "") {
+        const response = await axios.post("http://localhost:3033/login",{email, password});
+         if (response.status === 200) {
+            localStorage.setItem('token',response.data.token);
+            //localStorage.setItem('email',email)
              console.log('Logado com sucesso!');
              Navigate("/Biblioteca")
          } else {
@@ -44,8 +45,6 @@ const TelaLogin = () => {
             <div className="popup-background">
                     <div className="popup-content">
                         <h2 style={{marginBottom: "10%", textShadow: "2px 2px red"}}>Komeçar</h2>
-                        {/* <input className="input mouse_over" type="text" placeholder="Apelido" value={username}
-                            onChange={(e) => setUsername(e.target.value)}></input> */}
 
                         <input className="input mouse_over" type="text" placeholder="Email" value={email}
                             onChange={(e) => setEmail(e.target.value)}></input>
